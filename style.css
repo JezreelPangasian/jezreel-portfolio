@@ -3,6 +3,10 @@ body {
     font-fammily: Arial;
 }
 
+#loader {
+    position: fixed;
+}
+
 .page {
     display: none;
 }
