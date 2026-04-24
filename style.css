@@ -10,3 +10,7 @@ body {
 .page.active {
     display: block;
 }
+
+.menu {
+    display: grid;
+}
