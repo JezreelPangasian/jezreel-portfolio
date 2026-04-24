@@ -1,37 +1,95 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
+        <meta charset="UTF-8">
         <title>Portfolio</title>
 
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
         <link rel="stylesheet" href="style.css">
-
+        <link href="https://fonts.googleapis.com/css2?family=Londrina+Shadow&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     </head>
+
     <body>
-        <div id="loader">Loading...</div>
+        <div class="loader" id="loader">
+            <div class="bar">
+                <div class="bar-fill"></div>
+            </div>
+        </div>
+
+        <div class="page active" id="intro">
+            <div class="intro-bg"></div>
+            <div class="center intro-content">
+                <h1 class="title glow">WELCOME</h1>
+                <p class="name">JEZREEL PANGASIAN</p>
+
+                <div class="press-hint">
+                    <span>Press to Continue</span>
+                    <div class="dot-flash"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="page" id="menu">
+            <div class="menu">
+
+                <div class="card profile">
+                    <h2>Jezreel Pangasian</h2>
+                    <p>Xavier University | IT Student</p>
+                </div>
+
+                <div class="card" onclick="goPage('projects')"> Projects</div>
+                <div class="card" onclick="goPage('skills')"> Skills</div>
+                <div class="card" onclick="goPage('about')"> About</div>
+                <div class="card" onclick="goPage('contact')"> Contact</div>
+            </div>
+        </div>
+
+        <div class="page" id="projects">
+            <button class="back-btn" onclick="goBack()"> Back</button>
+
+            <h1>Projects</h1>
+
+            <div class="projects-container">
+
+                <div class="project-card" onclick="openProject('task')">
+                    <h2>INSERT PROJECT</h2>
+                    <p>INSERT SOMETHING</p>
+                </div>
+
+                <div class="project-card" onclick="openProject('travel')">
+                    <h2>INSERT PROJECT 2</h2>
+                    <p>INSERT SOMETHING 2</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="page" id="skills">
+            <button class="back-btn" onclick="goBack()"> Back</button>
+            <h1>Skiils</h1>
+            <p>HTML, CSS, Flexbox<p>
+        </div>
+
+        <div class="page" id="about">
+            <button class="back-btn" onclick="goBack()"> Back</button>
+            <h1>About</h1>
+            <p>A 2nd year Xavier University student taking the IT course</p>
+        </div>
         
-        <div class="page active" id="intro"></div>
-
-        <div class="page" id="menu"></div>
-
-        <div id="intro">WELCOME</div>
-
-        <div class="menu">
-            <div onclick="goPage('projects')">Projects</div>
-            <div onclick="goPage('skills')">Skills</div>
+        <div class="page" id="contact">
+            <button class="back-btn" onclick="goBack()"> Back</button>
+            <h1>Contact</h1>
+            <p>Email: 20240030824@my.xu.edu.ph</p>
         </div>
 
-        <div id="project" class="page">
-            <h1>>Projects</h1>
-            <div onclick="openProject('task')">Project 1</div>
+        <div class="page" id="project-detail">
+            <button class="back-btn" onclick="goBack()"> Back</button>
+            <div id="projectContent"></div>
         </div>
 
-        <div id="skills">Skills</div>
-
-        <div id="about">About</div>
-
-        <div id="contact">Contact</div>
+        <div class="sound-toggle" onclick="toggleSound()"> 🔊 </div>
 
         <script src="script.js"></script>
-
     </body>
-</html>
+<html>
