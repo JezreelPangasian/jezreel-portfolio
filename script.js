@@ -9,3 +9,7 @@ function goPage(target) {
 document.getElementById("intro").onclick = () => {
     goPage("menu");
 };
+
+function openProject() {
+    goPage("project-detail");
+}
