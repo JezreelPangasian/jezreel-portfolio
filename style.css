@@ -6,7 +6,7 @@ body {
     margin: 0;
     font-family: 'Poppins', sans-serif;
     background: #F4FAFF;
-    overFlow: hidden;
+    overflow: hidden;
 }
 
 body::before { 
@@ -93,7 +93,7 @@ body::before {
     left: -25%;
 
     background:
-        radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.7). transparent 40%),
+        radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.7), transparent 40%),
         radial-gradient(circle at 70% 60%, rgba(255, 255, 255, 0.4), transparent 50%);
 
     animation: floatLight 10s ease-in-out infinite alternate;
@@ -146,7 +146,7 @@ body::before {
 .title{
     color: white;
     font-family: 'Londrina Shadow', cursive;
-    font-size: 126px;
+    font-size: clamp(48px, 10vw, 126px);
 }
 
 .name {
@@ -165,7 +165,7 @@ body::before {
 
 .press-hint {
     margin-top: 25px;
-    opacity: 0.7s;
+    opacity: 0.7;
     display: flex;
     gap: 8px;
     align-items: center;
@@ -255,4 +255,57 @@ body::before {
     border-radius: 12px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0, 0.1);
     cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .page {
+        padding: 20px;
+    }
+
+    .title {
+        font-size: 64px;
+    }
+
+    .name {
+        font-size: 14px;
+    }
+
+    .profile {
+        grid-column: span 1;
+    }
+
+    .card {
+        padding: 20px;
+    }
+
+    .projects-container {
+        grid-template-columns: 1fr;
+    }
+
+    .project-card {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    .back-btn {
+        padding: 8px 12px;
+        font-size: 12px;
+    }
+
+    .sound-toggle {
+        bottom: 15px;
+        right: 15px;
+        padding: 8px 10px;
+    }
+}
+
+button, .card, .project-card {
+    min-height: 44px;
+}
+
+.page {
+    transition: 0.4s ease;
 }
