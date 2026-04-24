@@ -5,3 +5,7 @@ function goPage(target) {
     document.getElementById(target).classList.add("active");
     currentPage = target;
 }
+
+document.getElementById("intro").onclick = () => {
+    goPage("menu");
+};
