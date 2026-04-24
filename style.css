@@ -2,3 +2,11 @@ body {
     margin: 0;
     font-fammily: Arial;
 }
+
+.page {
+    display: none;
+}
+
+.page.active {
+    display: block;
+}
