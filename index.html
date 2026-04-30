@@ -33,6 +33,8 @@
             </div>
         </div>
 
+        <div class="particles"></div>
+
         <div class="page" id="menu">
             <div class="menu">
 
@@ -54,15 +56,14 @@
             <h1>Projects</h1>
 
             <div class="projects-container">
-
                 <div class="project-card" onclick="openProject('task')">
-                    <h2>INSERT PROJECT</h2>
-                    <p>INSERT SOMETHING</p>
+                    <h2>MVC Calculator</h2>
+                    <p>A calculator that follows the MVC model</p>
                 </div>
-
-                <div class="project-card" onclick="openProject('travel')">
-                    <h2>INSERT PROJECT 2</h2>
-                    <p>INSERT SOMETHING 2</p>
+            
+                <div class="project-card" onclick="openProject('task')">
+                    <h2>Cafe Management System</h2>
+                    <p>A cafe management system for cafe management</p>
                 </div>
             </div>
         </div>
@@ -70,19 +71,69 @@
         <div class="page" id="skills">
             <button class="back-btn" onclick="goBack()"> Back</button>
             <h1>Skiils</h1>
-            <p>HTML, CSS, Flexbox<p>
+        
+
+            <div class="skill-container">
+                <div class="skill-card">
+                    <h3> Frontend </h3>
+                    <div class="skill-tags">
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>Flexbox</span>
+                    </div>
+                </div>
+
+                <div class="skill-card">
+                    <h3> Design </h3> 
+                    <div class="skill-tags">
+                        <span>UI Design</span>
+                        <span>Responsive Design</span>
+                    </div>
+                </div>
+
+                <div class="skill-card">
+                    <h3> Tools </h3> 
+                    <div class="skill-tags">
+                        <span>Git</span>
+                        <span>Github</span>
+                        <span>VS Code</span>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <div class="page" id="about">
             <button class="back-btn" onclick="goBack()"> Back</button>
-            <h1>About</h1>
-            <p>A 2nd year Xavier University student taking the IT course</p>
+            <h1>About Me</h1>
+
+            <div class="about-container">
+                <p class="about-text">
+                    Hi, I am <b>Jezreel Pangasian</b>, 2nd year Information Technology student at Xavier University.
+                </p>
+
+                <p class="about-text">
+                    Outside of coding, I enjoy working on creative projects like video editting and continuously learning to improve my craft
+                </p>
+            </div>
         </div>
         
         <div class="page" id="contact">
             <button class="back-btn" onclick="goBack()"> Back</button>
             <h1>Contact</h1>
-            <p>Email: 20240030824@my.xu.edu.ph</p>
+
+            <div class="contact-container">
+
+                <p class="contact-text">
+                    Feel free to contact me using these information
+                </p>
+
+                <div class="contact-card">
+                    <span>Email</span>
+                    <a href="mailto:20240030824@my.xu.edu.ph">
+                        20240030824@my.xu.edu.ph
+                    </a>
+                </div>
+            </div>
         </div>
 
         <div class="page" id="project-detail">
@@ -94,4 +145,4 @@
 
         <script src="script.js"></script>
     </body>
-<html>
+</html>
