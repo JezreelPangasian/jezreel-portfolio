@@ -51,19 +51,19 @@ function goBack() {
 function openProject(type) {
     const content = document.getElementById("projectContent");
 
-    if (type === "task") {
+    if (type === "mvc") {
         content.innerHTML = `
-        <h2>Task Manager</h2>
-        <p><b>Problem:</b> Task execution simulation</p>
-        <p><b>Result:</b> Working task tracker</p>
+            <h2>MVC Calculator</h2>
+            <p><b>Goal:</b> Calculator using MVC</p>
+            <p><b>Tech:</b> Java</p>
         `;
     }
 
-    if (type === "travel") {
+    if (type === "cafe") {
         content.innerHTML = `
-        <h2>Travel UI Design</h2>
-        <p><b>Problem:</b> Minimal UI design</p>
-        <p><b>Result:</b> Clean experience</p>
+            <h2>Cafe Mangement System</h2>
+            <p><b>Goal::</b> Management cafe operations</p>
+            <p><b>Tech:</b> Python, </p>
         `;
     }
 
@@ -79,3 +79,35 @@ function toggleSound() {
     }
 }
 
+const particles = document.querySelector(".particles");
+
+for (let i = 0; i < 20; i++) {
+    const p = document.createElement("span");
+    p.style.left = Math.random() * 100 + "%";
+    p.style.animationDuration = 6 + Math.random() * 6 + "s";
+    particles.appendChild(p);
+}
+
+function openProject(type) {
+    const content = document.getElementById("projectContent");
+
+    if (type === "task") {
+        content.innerHTML = `
+            <h2>MVC Calculator</h2>
+            <p><b>Goal:</b> To create a calculator following the MVC pattern</p>
+            <p><b>Tech:</b> Java</p>
+            <p><b>Result:</b> CHANGE</p>
+        `;
+    }
+
+    if (type === "task") {
+        content.innerHTML = `
+            <h2>Cafe Management System</h2>
+            <p><b>Goal:</b> To create a comprehensive cafe management system</p>
+            <p><b>Tech:</b> Python, </p>
+            <p><b>Result:</b> CHANGE</p>
+        `;
+    }
+
+    goPage("project-detail");
+}
