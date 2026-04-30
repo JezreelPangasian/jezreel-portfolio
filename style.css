@@ -55,33 +55,97 @@ body::before {
     to { width: 100%; }
     }
 
+.skill-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+    margin-top: 20px
+}
+
+.skill-card {
+    background: white;
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    transition: 0.3s;
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.skill-tags {
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.skill-tags span {
+    background: #E6F2FF;
+    color: #3A8DFF;
+    padding: 6px 10px;
+    border-radius: 10px;
+    font-size: 12px;
+}
+
+.about-container {
+    background: white;
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+.contact-container {
+    margin-top: 20px; 
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-text {
+    color: #555
+}
+
+.contact-card {
+    background: white;
+    padding: 15px 20px;
+    border-radius: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    transition: 0.3s;
+}
+
+.about-text {
+    margin-bottom: 15px;
+    color: #333;
+}
+
 .page{
     position: absolute;
     width: 100%;
     height: 100%;
     padding: 40px;
     opacity: 0;
-    transform: translateX(30px);
+    transform: scale(0.98) translateY(10px);
     pointer-events: none;
-    transition: 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+    transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .page.active {
     opacity: 1;
-    transform: translateX(0);
+    transform: scale(1) translateY(0);
     pointer-events: auto;
 }
 
 .intro-bg {
     position: absolute;
     inset: 0;
-    z-index: 0;
-    
-    background: linear-gradient(
-        160deg, #5CAEFF 0%, #8ED0FF 40%, #DFF3FF 100%
-    );
-
     overflow: hidden;
+    background: linear-gradient(160deg, #5CAEFF, #8ED0FF 40%, #EAF6FF 100%);
 }
 
 .intro-bg::before {
@@ -89,38 +153,38 @@ body::before {
     position: absolute;
     width: 150%;
     height: 150%;
-    top: -25%;
-    left: -25%;
+    top: -30%;
+    left: -30%;
 
     background:
         radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.7), transparent 40%),
         radial-gradient(circle at 70% 60%, rgba(255, 255, 255, 0.4), transparent 50%);
 
-    animation: floatLight 10s ease-in-out infinite alternate;
+    animation: floatLight 12s ease-in-out infinite alternate;
 }
 
 .intro-bg::after {
     content: "";
     position: absolute;
-    width: 150%;
-    height: 150%;
+    width: 160%;
+    height: 160%;
     top: -20%;
     left: -20%;
 
     background: 
         radial-gradient(circle at 60% 20%, rgba(255, 255, 255, 0.5), transparent 40%), 
-        radial-gradient(circle at 20% 80%, rgba(109, 185, 255, 0.4), transparent 50%);
+        radial-gradient(circle at 20% 80%, rgba(109, 185, 255, 0.5), transparent 50%);
     animation: floatLight 12s ease-in-out infinite alternate;
 }
 
 @keyframes floatLight {
     from { transform: translateY(0) scale(1); }
-    to { transform: translateY(-30px) scale(1.05); }
+    to { transform: translateY(-40px) scale(1.05); }
 }
 
 @keyframes floatLight2 {
     from { transform: translateX(0) scale(1); }
-    to { transform: translateX(30px) scale(1.05); }
+    to { transform: translateX(40px) scale(1.05); }
 }
 
 .center {
@@ -136,11 +200,10 @@ body::before {
 .intro-content {
     position: relative;
     z-index: 2;
-    text-align: center;
 
     text-shadow:
-        0 0 10px rgba(255, 255, 255, 0.9),
-        0 0 30px rgba(0, 0, 0, 0.2);
+        0 0 20px rgba(255, 255, 255, 0.9),
+        0 0 40px rgba(0, 0, 0, 0.25);
 }
 
 .title{
@@ -151,6 +214,7 @@ body::before {
 
 .name {
     color: rgba(255, 255, 255, 0.85);
+    letter-spacing: 2px;
 }
 
 .glow {
@@ -163,14 +227,38 @@ body::before {
     50% { transform: translateY(-6px); }
 }
 
+.particles span {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: white;
+    border-radius: 50%;
+    opacity: 0.6;
+    animation: floatParticles 10s linear infinite;
+}
+
+@keyframes floatParticles {
+    from { 
+        transform: translateY(100vh);
+        opacity: 0;
+    }
+    20% { opacity: 1; }
+    to {
+        transform: translateY(-20vh);
+        opacity: 0;
+    }
+}
+
 .press-hint {
     margin-top: 25px;
     opacity: 0.7;
-    display: flex;
-    gap: 8px;
-    align-items: center;
-    animation: fadePulse 2s infinite;
+    transition: 0.3s;
     color: white;
+}
+
+#intro:hover .press-hint {
+    opacity: 1;
+    transform: scale(1.05);
 }
 
 @keyframes fadePulse {
