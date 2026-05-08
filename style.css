@@ -1,399 +1,148 @@
-* {
-    box-sizing: border-box;
-}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Portfolio</title>
 
-body {
-    margin: 0;
-    font-family: 'Poppins', sans-serif;
-    background: #F4FAFF;
-    overflow: hidden;
-}
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-body::before { 
-    content: "";
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(circle at top, rgba(109,185,255,0.15), transparent 60%);
-}
+        <link rel="stylesheet" href="style.css">
+        <link href="https://fonts.googleapis.com/css2?family=Londrina+Shadow&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+        
+    </head>
 
-.loader{
-    position: fixed; 
-    width: 100%;
-    height: 100%;
-    background: #6DB9FF;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
-    opacity: 1;
-    transition: opacity 0.6s ease;
-}
+    <body>
+        <div class="loader" id="loader">
+            <div class="bar">
+                <div class="bar-fill"></div>
+            </div>
+        </div>
 
-.loader.hide {
-    opacity: 0;
-    pointer-events: none;
-}
+        <div class="page active" id="intro">
+            <div class="intro-bg"></div>
+            <div class="center intro-content">
+                <h1 class="title glow">WELCOME</h1>
+                <p class="name">JEZREEL PANGASIAN</p>
 
-.bar {
-    width: 220px;
-    height: 10px;
-    background: rgba(255, 255, 255, 0.3);
-    border-radius: 20px;
-    overflow: hidden;
-}
+                <div class="press-hint">
+                    <span>Press to Continue</span>
+                    <div class="dot-flash"></div>
+                </div>
+            </div>
+        </div>
 
-.bar-fill{
-    width: 0%;
-    height: 100%;
-    background: white;
-    animation: load 1.2s ease forwards;
-}
+        <div class="particles"></div>
 
-@keyframes load {
-    from { width: 0%; }
-    to { width: 100%; }
-    }
+        <div class="page" id="menu">
+            <div class="menu">
 
-.skill-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 15px;
-    margin-top: 20px
-}
+                <div class="card profile">
+                    <h2>Jezreel Pangasian</h2>
+                    <p>Xavier University | IT Student</p>
+                </div>
 
-.skill-card {
-    background: white;
-    padding: 20px;
-    border-radius: 16px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-    transition: 0.3s;
-}
+                <div class="card" onclick="goPage('projects')"> Projects</div>
+                <div class="card" onclick="goPage('skills')"> Skills</div>
+                <div class="card" onclick="goPage('about')"> About</div>
+                <div class="card" onclick="goPage('contact')"> Contact</div>
+            </div>
+        </div>
 
-.skill-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
-}
+        <div class="page" id="projects">
+            <button class="back-btn" onclick="goBack()"> Back</button>
 
-.skill-tags {
-    margin-top: 10px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-}
+            <h1>Projects</h1>
 
-.skill-tags span {
-    background: #E6F2FF;
-    color: #3A8DFF;
-    padding: 6px 10px;
-    border-radius: 10px;
-    font-size: 12px;
-}
+            <div class="projects-container">
+                <div class="project-card" onclick="openProject('task')">
+                    <h2>MVC Calculator</h2>
+                    <p>A calculator that follows the MVC model</p>
+                </div>
+            
+                <div class="project-card" onclick="openProject('task')">
+                    <h2>Cafe Management System</h2>
+                    <p>A cafe management system for cafe management</p>
+                </div>
+            </div>
+        </div>
 
-.about-container {
-    background: white;
-    padding: 20px;
-    border-radius: 16px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-}
+        <div class="page" id="skills">
+            <button class="back-btn" onclick="goBack()"> Back</button>
+            <h1>Skiils</h1>
+        
 
-.contact-container {
-    margin-top: 20px; 
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
+            <div class="skill-container">
+                <div class="skill-card">
+                    <h3> Frontend </h3>
+                    <div class="skill-tags">
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>Flexbox</span>
+                    </div>
+                </div>
 
-.contact-text {
-    color: #555
-}
+                <div class="skill-card">
+                    <h3> Design </h3> 
+                    <div class="skill-tags">
+                        <span>UI Design</span>
+                        <span>Responsive Design</span>
+                    </div>
+                </div>
 
-.contact-card {
-    background: white;
-    padding: 15px 20px;
-    border-radius: 14px;
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-    transition: 0.3s;
-}
+                <div class="skill-card">
+                    <h3> Tools </h3> 
+                    <div class="skill-tags">
+                        <span>Git</span>
+                        <span>Github</span>
+                        <span>VS Code</span>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-.about-text {
-    margin-bottom: 15px;
-    color: #333;
-}
+        <div class="page" id="about">
+            <button class="back-btn" onclick="goBack()"> Back</button>
+            <h1>About Me</h1>
 
-.page{
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    padding: 40px;
-    opacity: 0;
-    transform: scale(0.98) translateY(10px);
-    pointer-events: none;
-    transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
-}
+            <div class="about-container">
+                <p class="about-text">
+                    Hi, I am <b>Jezreel Pangasian</b>, 2nd year Information Technology student at Xavier University.
+                </p>
 
-.page.active {
-    opacity: 1;
-    transform: scale(1) translateY(0);
-    pointer-events: auto;
-}
+                <p class="about-text">
+                    Outside of coding, I enjoy working on creative projects like video editting and continuously learning to improve my craft
+                </p>
+            </div>
+        </div>
+        
+        <div class="page" id="contact">
+            <button class="back-btn" onclick="goBack()"> Back</button>
+            <h1>Contact</h1>
 
-.intro-bg {
-    position: absolute;
-    inset: 0;
-    overflow: hidden;
-    background: linear-gradient(160deg, #5CAEFF, #8ED0FF 40%, #EAF6FF 100%);
-}
+            <div class="contact-container">
 
-.intro-bg::before {
-    content: "";
-    position: absolute;
-    width: 150%;
-    height: 150%;
-    top: -30%;
-    left: -30%;
+                <p class="contact-text">
+                    Feel free to contact me using these information
+                </p>
 
-    background:
-        radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.7), transparent 40%),
-        radial-gradient(circle at 70% 60%, rgba(255, 255, 255, 0.4), transparent 50%);
+                <div class="contact-card">
+                    <span>Email</span>
+                    <a href="mailto:20240030824@my.xu.edu.ph">
+                        20240030824@my.xu.edu.ph
+                    </a>
+                </div>
+            </div>
+        </div>
 
-    animation: floatLight 12s ease-in-out infinite alternate;
-}
+        <div class="page" id="project-detail">
+            <button class="back-btn" onclick="goBack()"> Back</button>
+            <div id="projectContent"></div>
+        </div>
 
-.intro-bg::after {
-    content: "";
-    position: absolute;
-    width: 160%;
-    height: 160%;
-    top: -20%;
-    left: -20%;
+        <div class="sound-toggle" onclick="toggleSound()"> 🔊 </div>
 
-    background: 
-        radial-gradient(circle at 60% 20%, rgba(255, 255, 255, 0.5), transparent 40%), 
-        radial-gradient(circle at 20% 80%, rgba(109, 185, 255, 0.5), transparent 50%);
-    animation: floatLight 12s ease-in-out infinite alternate;
-}
-
-@keyframes floatLight {
-    from { transform: translateY(0) scale(1); }
-    to { transform: translateY(-40px) scale(1.05); }
-}
-
-@keyframes floatLight2 {
-    from { transform: translateX(0) scale(1); }
-    to { transform: translateX(40px) scale(1.05); }
-}
-
-.center {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    text-align: center;
-}
-
-.intro-content {
-    position: relative;
-    z-index: 2;
-
-    text-shadow:
-        0 0 20px rgba(255, 255, 255, 0.9),
-        0 0 40px rgba(0, 0, 0, 0.25);
-}
-
-.title{
-    color: white;
-    font-family: 'Londrina Shadow', cursive;
-    font-size: clamp(48px, 10vw, 126px);
-}
-
-.name {
-    color: rgba(255, 255, 255, 0.85);
-    letter-spacing: 2px;
-}
-
-.glow {
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(109, 185, 255, 0.6);
-    animation: floatText 3s ease-in-out infinite;
-}
-
-@keyframes floatText {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-6px); }
-}
-
-.particles span {
-    position: absolute;
-    width: 6px;
-    height: 6px;
-    background: white;
-    border-radius: 50%;
-    opacity: 0.6;
-    animation: floatParticles 10s linear infinite;
-}
-
-@keyframes floatParticles {
-    from { 
-        transform: translateY(100vh);
-        opacity: 0;
-    }
-    20% { opacity: 1; }
-    to {
-        transform: translateY(-20vh);
-        opacity: 0;
-    }
-}
-
-.press-hint {
-    margin-top: 25px;
-    opacity: 0.7;
-    transition: 0.3s;
-    color: white;
-}
-
-#intro:hover .press-hint {
-    opacity: 1;
-    transform: scale(1.05);
-}
-
-@keyframes fadePulse {
-    0%, 100% { opacity: 0.3; }
-    50% { opacity: 1; }
-}
-
-.dot-flash {
-    width: 6px;
-    height: 6px;
-    background: #3A8DFF;
-    border-radius: 50%;
-    animation: blink 1s infinite;
-}
-
-@keyframes blink {
-    0%, 100% { opacity: 0.2; transform: scale(0.8); }
-    50% { opacity: 1; transform: scale(1.2); }
-}
-
-.menu {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-}
-
-.card {
-    background: white;
-    padding: 25px;
-    border-radius: 16px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0, .08);
-    cursor: pointer;
-    transition: 0.25s;
-}
-
-.card:hover {
-    transform: translateY(-6px) scale(1.01);
-}
-
-.profile {
-    grid-column: span 2;
-}
-
-.projects-container {
-    margin-top: 20px;
-    display: grid;
-    gap: 15px;
-}
-
-.project-card {
-    background: white;
-    padding: 20px;
-    border-radius: 16px;
-    cursor: pointer;
-    transition: 0.25s;
-}
-
-.project-card:hover {
-    transform: translateY(-4px);
-}
-
-#projectContent {
-    background: white;
-    padding: 20px;
-    border-radius: 16px;
-}
-
-.back-btn {
-    border: none;
-    background: white;
-    padding: 10px 15px;
-    border-radius: 10px;
-    cursor: pointer;
-}
-
-.sound-toggle {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: white;
-    padding: 10px 12px;
-    border-radius: 12px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0, 0.1);
-    cursor: pointer;
-}
-
-@media (max-width: 768px) {
-    .page {
-        padding: 20px;
-    }
-
-    .title {
-        font-size: 64px;
-    }
-
-    .name {
-        font-size: 14px;
-    }
-
-    .profile {
-        grid-column: span 1;
-    }
-
-    .card {
-        padding: 20px;
-    }
-
-    .projects-container {
-        grid-template-columns: 1fr;
-    }
-
-    .project-card {
-        padding: 15px;
-    }
-
-    h1 {
-        font-size: 24px;
-    }
-
-    .back-btn {
-        padding: 8px 12px;
-        font-size: 12px;
-    }
-
-    .sound-toggle {
-        bottom: 15px;
-        right: 15px;
-        padding: 8px 10px;
-    }
-}
-
-button, .card, .project-card {
-    min-height: 44px;
-}
-
-.page {
-    transition: 0.4s ease;
-}
+        <script src="script.js"></script>
+    </body>
+</html>
